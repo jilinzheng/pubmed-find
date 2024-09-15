@@ -1,5 +1,5 @@
 import re
-import json
+#import json
 
 from pandas import DataFrame
 
@@ -52,8 +52,8 @@ def process_entries(entries, valid_words, invalid_words):
 
 
 file = 'pubmed_data.txt'
-valid_words = ['dietary intake', 'diet intake', 'food intake', 'energy intake', 'eating intake', 'eat intake', 'dietary pattern', 'diet pattern', 'eating pattern', 'weekend', 'weekday']
-invalid_words = ["ffq", "food frequency questionnaire"]
+valid_words = ['dietary intake', 'diet intake', 'food intake', 'energy intake', 'eating intake', 'eat intake', 'dietary pattern', 'diet pattern', 'eating pattern', 'weekend', 'weekday', 'dietary intakes', 'diet intakes', 'food intakes', 'energy intakes', 'eating intakes', 'eat intakes', 'dietary patterns', 'diet patterns', 'eating patterns', 'weekends', 'weekdays', 'workday', 'workdays', 'offdays', 'offday']
+invalid_words = ['ffq', 'food frequency questionnaire', 'food frequency questionnaires']
 
 entries = read_entries(file)
 #result = process_entries(entries, valid_words, invalid_words)
