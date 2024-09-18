@@ -1,6 +1,4 @@
 import re
-#import json
-
 from pandas import DataFrame
 
 
@@ -17,7 +15,7 @@ def read_entries(file):
     return entries
 
 
-def process_entries(entries, valid_words, invalid_words):
+def process_entries(entries, valid_words, invalid_words, filename):
     """
     create a list of dicts of valid entries' citation, title and author
     """
@@ -46,18 +44,20 @@ def process_entries(entries, valid_words, invalid_words):
             excel_entries['Author'].append(entry_content[2].split('(')[0])
 
     df = DataFrame(excel_entries)
-    df.to_excel('pubmed_find_results.xlsx', sheet_name='sheet1', index=False)
+    df.to_excel(f'results_{filename}.xlsx', sheet_name='sheet1', index=False, engine='xlsxwriter')
 
     #return valid_entries
 
 
-file = 'pubmed_data.txt'
+files = ['abstract-nutritiona-set 2007 to 2014 12 31.txt', 'abstract-nutritiona-set 2014 to 2019 12 31.txt']
 valid_words = ['dietary intake', 'diet intake', 'food intake', 'energy intake', 'eating intake', 'eat intake', 'dietary pattern', 'diet pattern', 'eating pattern', 'weekend', 'weekday', 'dietary intakes', 'diet intakes', 'food intakes', 'energy intakes', 'eating intakes', 'eat intakes', 'dietary patterns', 'diet patterns', 'eating patterns', 'weekends', 'weekdays', 'workday', 'workdays', 'offdays', 'offday']
 invalid_words = ['ffq', 'food frequency questionnaire', 'food frequency questionnaires']
 
-entries = read_entries(file)
-#result = process_entries(entries, valid_words, invalid_words)
-process_entries(entries, valid_words, invalid_words)
+for file in files:
+    entries = read_entries(file)
+    #result = process_entries(entries, valid_words, invalid_words)
+    filename = file.partition('.txt')[0]
+    process_entries(entries, valid_words, invalid_words, filename)
 
 """
 with open('./pubmed_find_results.json','w',encoding='utf-8') as f:
