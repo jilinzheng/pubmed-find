@@ -4,7 +4,7 @@ import pandas
 
 
 # SET APPROPRIATELY
-FILES = ['abstract-nutritiona-set 1949 to 1992 12 31.txt']#, 'abstract-nutritiona-set 2007 to 2014 12 31.txt', 'abstract-nutritiona-set 2014 to 2019 12 31.txt', 'abstract-nutritiona-set 2019 to 2024 07 21.txt']
+FILES = ['abstract-nutritiona-set 1949 to 1992 12 31.txt', 'abstract-nutritiona-set 2007 to 2014 12 31.txt', 'abstract-nutritiona-set 2014 to 2019 12 31.txt', 'abstract-nutritiona-set 2019 to 2024 07 21.txt']
 VALID_WORDS = ['dietary intake', 'diet intake', 'food intake', 'energy intake', 'eating intake', 'eat intake', 'dietary pattern', 'diet pattern', 'eating pattern', 'weekend', 'weekday', 'dietary intakes', 'diet intakes', 'food intakes', 'energy intakes', 'eating intakes', 'eat intakes', 'dietary patterns', 'diet patterns', 'eating patterns', 'weekends', 'weekdays', 'workday', 'workdays', 'offdays', 'offday']
 INVALID_WORDS = ['ffq', 'food frequency questionnaire', 'food frequency questionnaires']
 
