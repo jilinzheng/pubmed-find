@@ -4,6 +4,8 @@ A Python script to easily search through tens of thousands of pubmed summaries, 
 
 ## Usage
 
+[Video Tutorial](https://youtu.be/y2GL1bM_vmI)
+
 0. Ensure you have [Python 3](https://www.python.org/downloads/) installed; verify by typing `python --version` on Windows, or `python3 --version` on MacOS (you may have to add Python to your PATH environmental variable if you have installed it but cannot run the command)
 1. Clone this repository (if you have Git installed) or Download it as a ZIP (both can be found under the green button)
 2. Open a terminal and navigate to the folder/directory you cloned/downloaded this repo
