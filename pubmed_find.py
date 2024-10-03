@@ -4,7 +4,7 @@ import pandas
 
 
 # SET APPROPRIATELY
-FILES = ['abstract-nutritiona-set 1949 to 1992 12 31.txt', 'abstract-nutritiona-set 2007 to 2014 12 31.txt', 'abstract-nutritiona-set 2014 to 2019 12 31.txt', 'abstract-nutritiona-set 2019 to 2024 07 21.txt']
+FILES = ['abstract-nutritiona-set 1949 to 1992 12 31.txt', 'abstract-nutritiona-set 1992 to 2007 12 31.txt', 'abstract-nutritiona-set 2007 to 2014 12 31.txt', 'abstract-nutritiona-set 2014 to 2019 12 31.txt', 'abstract-nutritiona-set 2019 to 2024 07 21.txt']
 VALID_WORDS = ['dietary intake', 'diet intake', 'food intake', 'energy intake', 'eating intake', 'eat intake', 'dietary pattern', 'diet pattern', 'eating pattern', 'weekend', 'weekday', 'dietary intakes', 'diet intakes', 'food intakes', 'energy intakes', 'eating intakes', 'eat intakes', 'dietary patterns', 'diet patterns', 'eating patterns', 'weekends', 'weekdays', 'workday', 'workdays', 'offdays', 'offday']
 INVALID_WORDS = ['ffq', 'food frequency questionnaire', 'food frequency questionnaires']
 
@@ -54,7 +54,7 @@ def process_entries(entries, valid_words, invalid_words):
             # depending on the exact formatting of the entry, there may be one less 'author information' section or one extra 'comment' section
             try:
                 abstract = entry_content[4]
-                if 'DOI' in abstract[:4] or 'PMID' in abstract[:5]:
+                if 'DOI' in abstract[:4] or 'PMID' in abstract[:5] or 'PMCID' in abstract[:6] or 'Copyright' in abstract[:10]:
                     abstract = entry_content[3]
                 if 'Comment in' in abstract[:10] or 'Comment on' in abstract[:10]:
                     abstract = entry_content[5]
